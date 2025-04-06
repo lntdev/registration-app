@@ -1,27 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Online Registration</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <title>Online Registration Form</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="form-container">
-    <h2>Online Registration Form</h2>
-    <form id="registerForm" action="submit.php" method="POST">
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="text" name="phone" placeholder="Phone Number" required>
-      <select name="course" required>
-        <option value="">Select Course</option>
-        <option value="DevOps">DevOps</option>
-        <option value="Cloud">Cloud</option>
-        <option value="Full Stack">Full Stack</option>
+  <div class="container">
+    <h1>Registration Form</h1>
+    
+    <form name="registration" method="POST" data-netlify="true" netlify>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="course">Interested Course:</label>
+      <select id="course" name="course" required>
+        <option value="devops">DevOps</option>
+        <option value="cloud">Cloud Computing</option>
+        <option value="ai">Artificial Intelligence</option>
       </select>
+
+      <label for="comments">Comments:</label>
+      <textarea id="comments" name="comments" rows="4"></textarea>
+
       <button type="submit">Submit</button>
     </form>
+
+    <div id="success-message" style="display: none;">
+      <h3>Thank you for registering!</h3>
+      <p>We have received your details.</p>
+    </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
